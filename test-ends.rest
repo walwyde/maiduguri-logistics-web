@@ -1,0 +1,20 @@
+post http://localhost:3000/api/bookings HTTP/1.1
+Content-Type: application/json
+credentials: include
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ3YWx3eWRlQGdtYWlsLmNvbSIsIm5hbWUiOiJEZXYgQnJvIiwicm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzY0MTQyNTU5LCJleHAiOjE3NjQ3NDczNTl9.wVoFrfgLcPCWygb8g9YNMhJRNJEupOYsQW50dyTJPfc
+
+
+{
+  "pickup_address": "123 Main St",
+  "dropoff_address": "456 Elm St",
+  "scheduled_time": "2024-07-01T10:00:00Z"
+}
+
+###
+post http://localhost:3000/api/auth/signin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "walwyde@gmail.com",
+    "password": "password"
+}

@@ -9,14 +9,44 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.10",
+    "@vis.gl/react-google-maps": "^1.7.1",
+    "autoprefixer": "^10.4.22",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cookie": "^1.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.554.0",
+    "mysql2": "^3.15.3",
+    "net": "^1.0.2",
+    "next": "16.0.1",
+    "nominatim-client": "^3.2.1",
+    "pigeon-maps": "^0.22.1",
+    "pigeon-overlay": "^0.2.3",
+    "radix-ui": "^1.4.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "next": "16.0.1"
+    "react-leaflet": "^5.0.0",
+    "react-toast": "^1.0.3",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tls": "^0.0.1",
+    "toast": "^0.5.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.6",
+    "baseline-browser-mapping": "^2.9.7",
     "eslint": "^9",
-    "eslint-config-next": "16.0.1"
+    "eslint-config-next": "16.0.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
   }
 }

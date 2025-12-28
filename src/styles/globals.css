@@ -1,26 +1,224 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  input, textarea, select, button {
+    @apply outline-none focus:outline-none;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 20% 99%;
+    --foreground: 220 30% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 6%;
+
+    --primary: 217 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 30% 10%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 217 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 30% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 100% 50%;
+
+    /* Custom logistics tokens */
+    --status-pending: 217 100% 50%;
+    --status-pending-bg: 217 100% 96%;
+    --status-active: 38 92% 50%;
+    --status-active-bg: 45 100% 94%;
+    --status-completed: 142 76% 36%;
+    --status-completed-bg: 142 76% 94%;
+    --status-cancelled: 0 84% 60%;
+    --status-cancelled-bg: 0 84% 96%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 50%) 0%, hsl(230 100% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 99%) 0%, hsl(217 30% 96%) 100%);
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 100% 60%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 20% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 20% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 30%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 40%;
+    --warning-foreground: 210 40% 98%;
+
+    --border: 220 20% 17%;
+    --input: 220 20% 17%;
+    --ring: 217 100% 60%;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 217 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 217 100% 60%;
+
+    --status-pending-bg: 217 50% 15%;
+    --status-active-bg: 38 50% 15%;
+    --status-completed-bg: 142 40% 15%;
+    --status-cancelled-bg: 0 40% 15%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 60%) 0%, hsl(230 100% 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 7%) 0%, hsl(220 20% 10%) 100%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+@layer base {
+  * {
+    @apply border-transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 }
+
+@layer utilities {
+    .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+
+
+/* #root {
+
+  max-width: 1280px;
+   margin: 0 auto;
+   padding: 2rem;
+   text-align: center;
+} */
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+
+/*  */
+
